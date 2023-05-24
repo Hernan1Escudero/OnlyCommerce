@@ -1,0 +1,24 @@
+.spinner-border{
+    margin-top: 20%;
+    margin-left: 50%;
+}
+.btn-lg{
+    background-image: url(../src/assets/HeaderBackground.jpg);
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-style: none;
+}
+button{
+  border: thin;
+}
+
+div{
+  color: black;
+}
+.cartWidget{
+  display: flex;
+  align-items: baseline;
+  margin-right: 10%;
+}
+
