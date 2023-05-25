@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import ItemList from '../ItemList/ItemList';
 import { getProductos } from '../../AsyncMock/products';
-import Wait from '../Wait/wait';
+import Wait from "../Wait/Wait"
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
      console.log(productos)
     return (
         < >
-          { productos ? <ItemList  productos={productos}></ItemList>: <Wait className="hola"></Wait>}
+          { productos ? <ItemList  productos={productos}></ItemList>: <Wait></Wait>}
         
         </>
    )
