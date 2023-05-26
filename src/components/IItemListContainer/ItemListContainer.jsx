@@ -4,7 +4,7 @@ import ItemList from '../ItemList/ItemList';
 import { getProductos } from '../../AsyncMock/products';
 import Wait from "../Wait/Wait"
 import { useParams } from 'react-router-dom';
-import "../NavBar/NavBar.css"
+
 
 const ItemListContainer = () => {
    
