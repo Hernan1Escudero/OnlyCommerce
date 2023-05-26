@@ -1,10 +1,12 @@
 import React from 'react'
 import Spinner from 'react-bootstrap/Spinner';
-
+import "./Wait.css"
 const Wait = () => {
   return (
-    <Spinner  animation="border" role="status"></Spinner>
-  )
+    <div className='wait'>
+      <Spinner  animation="border" role="status"></Spinner>
+    </div>
+    )
 }
 
 export default Wait
