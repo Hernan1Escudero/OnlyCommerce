@@ -4,7 +4,7 @@ import ItemList from '../ItemList/ItemList';
 import { getProductos } from '../../AsyncMock/products';
 import Wait from "../Wait/Wait"
 import { useParams } from 'react-router-dom';
-
+import "./ItemListContainer.css"
 
 const ItemListContainer = () => {
    
@@ -24,15 +24,13 @@ const ItemListContainer = () => {
         getProductos()
             .then(response => setProductos(response))
             .catch(error => console.error("No se obtuvieron productos:"+ error))
-      }
-          
+      }  
       }, [idCategoria])
     return (
         < >
-          { productos ? <ItemList className="cuco" productos={productos}></ItemList>: <Wait></Wait>}
+          { productos ? <ItemList className="itemListContainer" productos={productos}></ItemList>: <Wait></Wait>}
         
         </>
    )
 }
-
 export default ItemListContainer

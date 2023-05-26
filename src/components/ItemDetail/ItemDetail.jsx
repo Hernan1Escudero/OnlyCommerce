@@ -4,13 +4,14 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CartContainer from '../CartContainer/CartContainer';
+import "./ItemDetail.css"
 
 const ItemDetail = ({producto}) => {
   const{id, name, precio,photo,categoria,stock}= producto[0]
   console.log(name)
   // Cart container esta en progreso no lo molesten
   return (
-    <Card className='cuco p-0  text-center d-flex felx-start  flex-row' style={{ height:"100%", width: '100%' }}> 
+    <Card className='cuco p-0 m-0  text-center d-flex felx-start  flex-row' style={{ height:"80%", width: '100%' }}> 
        <div className='itemDetailFrame  '>
        <Card.Img  className="cardImage" variant="top" src={photo}   />
        </div>

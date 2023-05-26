@@ -9,8 +9,8 @@ import NavBar from './components/NavBar/NavBar';
 function App() {
   
   return (
-    <div className='hola '>
-     <div className='shadow m-3'>
+    <div className='appFrame '>
+     <div className='shadow '>
       <BrowserRouter>
       <NavBar/>
       <Routes>
@@ -19,11 +19,10 @@ function App() {
       <Route path='/detail/:idProducto' element={ <ItemDetailContainer/>}/>
       <Route exact path='*' element={ <ItemListContainer/>}/>
       </Routes>
-      </BrowserRouter>
-      
+      </BrowserRouter> 
       </div>
-      
     </div>
+    
     );
 }
 

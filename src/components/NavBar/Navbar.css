@@ -4,13 +4,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
-  
   }
 
 .secondBackground{
   background-color: rgba(0,0,0,0.1); /* Black w/opacity/see-through */
-  
+  margin: 0;
+  padding: 0;
   }
 
  .distance{
@@ -19,12 +18,35 @@
    color: black;
 
  }
- 
- .navForm{
-   
-   border-radius: 5%;
-   
-  
-   
- }
 
+ .nav{
+  padding: 0;
+ 
+  background-color: #e1e6bf
+}
+
+.nav::-webkit-scrollbar {
+  width: 3px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+.headerFrame{
+  
+  margin: 4%;
+  margin-bottom: 0;
+  margin-right: 6%;
+  margin-left: 0;
+  border: 1%;
+}
+.button-color{
+  background-color: #AFC99B;
+  text-decoration: none;
+  border: none;
+}
+
+.navbar-toggler{
+  margin-right: 45%;
+}
