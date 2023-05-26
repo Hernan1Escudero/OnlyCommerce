@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
-import "../NavBar/NavBar.css" //ruta no deja de dar error en vercel
+import './Navbar.css' //ruta no deja de dar error en vercel
 import { Link } from 'react-router-dom';
 
 function BasicExample() {
