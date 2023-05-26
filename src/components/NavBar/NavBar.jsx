@@ -19,10 +19,12 @@ function BasicExample() {
           </div>
         </div>
       </header>
-   <Navbar className='pt-3 pb-3 '  bg="light" expand='xl' sticky="top">
-      <div className='container justify-content-center'>
-
-          <Nav className="text-decoration-underline " >
+   <Navbar className='navColor pt-3 pb-3  ' expand='xl' sticky="top">
+      <div className='container '>
+      <Navbar.Toggle aria-controls=" basic-navbar-nav" className='' />
+        <Navbar.Collapse className='  justify-content-center' id="basic-navbar-nav">
+          
+          <Nav className='flex-row' >
           <Link className="distance mt-2" to={"/Categoria/Depilacion"}>Depilacion</Link>
           <Link className="distance mt-2" to={"/Categoria/Masajes"}>Masajes</Link>
           <Link className="distance mt-2" to={"/Categoria/Spa"}> Spa</Link>
@@ -31,9 +33,12 @@ function BasicExample() {
              <NavDropdown.Item  href="#action/3.2">Nuestros Proveedores</NavDropdown.Item>
            <NavDropdown.Item  href="#action/3.3">Productos</NavDropdown.Item>
             </NavDropdown>
+            <CartWidget className=""></CartWidget>
           </Nav>
+
+          </Navbar.Collapse>
       
-          <CartWidget className=""></CartWidget>
+          
       </div>
       
     </Navbar>

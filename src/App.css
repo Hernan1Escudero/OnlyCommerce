@@ -1,24 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap');
+
 .spinner-border{
     margin-top: 20%;
     margin-left: 50%;
 }
 .btn-lg{
-    background-image: url(../src/assets/HeaderBackground.jpg);
-    background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-style: none;
+  background-color: #99A98F;
+    
 }
 button{
-  border: thin;
+  border: none;
+  
 }
 
-div{
-  color: black;
-}
 .cartWidget{
   display: flex;
   align-items: baseline;
   margin-right: 10%;
+  
+}
+.button-color{
+  background-color: #AFC99B;
+  text-decoration: none;
+  border: none;
 }
 
+.hola{
+  overflow: hidden;
+  padding: 7%;
+  padding-bottom: 5%;
+  padding-top: 1%;
+  background-color:#afc99b;
+  
+  z-index: 1
+  
+}
+.cuco{
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  position: relative;
+  background-color: #e3e7c3e8;
+  z-index: 2;
+}
+body{
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+}
+.itemFrame{
+   padding: 4%;
+   background-color:#f5fad3d2;
+   box-sizing: border-box;
+   
+}
+
+.itemDetailFrame{
+  margin: 2%;
+  padding: 2%;
+  background-color:whitesmoke;
+ 
+  
+}
+
+.card,.btn ,.cardImage{
+  margin: 1%;
+  border-radius: 0%;
+  color: #3e504ad0;
+  border: none;
+  
+
+}
+.card{
+  border-radius: 0%;
+  color: #3e504ad0;
+  border: none;
+  box-shadow:
+  inset 0 -3em 3em rgba(0,0,0,0.1),
+     
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+
+}
+.navColor{
+  overflow: scroll;
+  overflow-y: hidden;
+  background-color: #e3e7c3d3
+}
+.card-body, .card-footer{
+  background-color: #ecf0cc;
+  
+}
+.shadow{
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  box-shadow:
+  inset 0 -3em 3em rgba(0,0,0,0.1),
+
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+.plant1{
+  overflow: hidden;
+   position: absolute;
+   
+   bottom: 0;
+   left: 0;
+   width:60vh;
+   height:60vh ;
+   z-index: 0;
+   
+}
+.plant2{
+  overflow: hidden;
+    position: absolute;
+    left: 60vh;
+    width:60vh;
+    height:60vh ;
+    z-index: 0;
+
+}
+.navColor::-webkit-scrollbar {
+  width: 3px;
+}
+
+ 
+.navColor::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  
+}
+
+.shadow::-webkit-scrollbar {
+  width: 5px;
+}
+.shadow::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+}
+ 
+.shadow::-webkit-scrollbar-thumb {
+  background-color: rgb(169, 169, 169);
+
+
+}

@@ -2,17 +2,29 @@
 .withBackground{
     background-image: url(../../assets/HeaderBackground.jpg);
     background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
   
   }
 
 .secondBackground{
   background-color: rgba(0,0,0,0.1); /* Black w/opacity/see-through */
+  
   }
 
  .distance{
    margin-right:1rem ;
    margin-left:1rem ;
    color: black;
+
  }
+ 
+ .navForm{
+   
+   border-radius: 5%;
+   
+  
+   
+ }
+

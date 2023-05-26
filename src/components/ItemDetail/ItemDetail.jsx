@@ -10,9 +10,11 @@ const ItemDetail = ({producto}) => {
   console.log(name)
   // Cart container esta en progreso no lo molesten
   return (
-    <Card className='p-0 m-5 text-center d-flex flex-row' style={{ height:"20%", width: '90%' }}> 
-       <Card.Img  className="m-2" variant="top" src={photo}  style={{ height:"25rem", width: '50%' }} />
-        <Card.Body className='mt-5' >
+    <Card className='cuco p-0  text-center d-flex felx-start  flex-row' style={{ height:"100%", width: '100%' }}> 
+       <div className='itemDetailFrame  '>
+       <Card.Img  className="cardImage" variant="top" src={photo}   />
+       </div>
+        <Card.Body className='' >
         <Card.Title>{categoria}</Card.Title>
         <p>Precio: {name} </p>
           <p>Precio: ${precio} </p>
