@@ -18,8 +18,6 @@ a{
   padding-bottom: 5%;
   padding-top: 1%;
   height: 100%;
-  background-color:#afc99b;
-  
 }
 
 body{
@@ -27,16 +25,12 @@ body{
   font-size: 1.05rem;
   margin: 0;
   padding: 0;
-  height: 100vh;
+
  
 
 }
 
-.shadow{
-  box-shadow:
-  inset 0 -3em 3em rgba(0,0,0,0.1),
-        0.3em 0.3em 1em rgba(0,0,0,0.3);
-}
+
 
 body::-webkit-scrollbar {
   width: 5px;
@@ -46,5 +40,14 @@ body::-webkit-scrollbar-track {
 }
  body::-webkit-scrollbar-thumb {
   background-color: rgb(169, 169, 169);
+
+}
+
+html,body{
+ height: 100%;
+  background-color: #afc99b;
+}
+.appFrame{
+  height: 100vh;
 
 }
