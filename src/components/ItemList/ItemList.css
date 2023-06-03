@@ -1,8 +1,19 @@
 .itemList{
-  
-    padding: 1%;
-   
     background-color: #e3e7c3e8;
-  
+    background-image: url("/src/assets/planta1.png");
+    height: 73vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 72vh;
    
+  }
+  .itemList::-webkit-scrollbar {
+    width: 5px;
+  }
+  .itemList::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  .itemList::-webkit-scrollbar-thumb {
+    background-color: rgb(169, 169, 169);
+  
   }

@@ -9,8 +9,8 @@ import NavBar from './components/NavBar/NavBar';
 function App() {
   
   return (
-    <div className='hi pb-5 '>
-     <div className='m-5  shadow '>
+    <div className='hi  pb-5 '>
+     <div className='m-4 shadow '>
       <BrowserRouter>
       <NavBar/>
       <Routes>

@@ -15,7 +15,7 @@ const CartContainer = () => {
        }
     }
   return (
-    <div className="card m-3 p-2 ">
+    <div className="card ">
     <div className=" container p-1">
       <p> Agregar al carrito</p>
       <div className="btn-group col-4   ">

@@ -28,7 +28,7 @@ const ItemListContainer = () => {
       }, [idCategoria])
     return (
         < >
-          { productos ? <ItemList className="itemListContainer" productos={productos}></ItemList>: <Wait></Wait>}
+          { productos ? <ItemList className="itemListContainer " productos={productos}></ItemList>: <Wait></Wait>}
         
         </>
    )
