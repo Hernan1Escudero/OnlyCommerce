@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/esm/Button';
 import "./CartWidget.css"
+import { cartContext } from '../../Context/cartContext';
 
 const CartWidget = () => {
-     const [number]=  useState(0) //no se pidio cambiar el estado asi que no ahrehue la funcion para cambiarlo
-     
+     const [number,setNumber]=  useState(0) //no se pidio cambiar el estado asi que no ahrehue la funcion para cambiarlo
+    
+     const { carrito } = useContext(cartContext)
+      const value= carrito.length;
+      console.log("hey",carrito)
+      useEffect(()=>{
+        setNumber(value)
+      },[carrito])
+      
     return (
     
       <Button className="flag  m-0 pt-5 d-flex button-color "  >
