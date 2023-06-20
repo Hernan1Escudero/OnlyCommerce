@@ -7,7 +7,7 @@ import { cartContext } from "../../Context/cartContext";
 
 const Checkout = () => {
     const { carrito, vaciar } = useContext(cartContext)
-    
+     console.log("OOO",carrito)
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -38,8 +38,8 @@ const Checkout = () => {
         const orden = {
             items: carrito.map(producto => ({
                 id: producto.item.id,
-                name: producto.item.name,
-                cantidad: producto.stock
+                nombre: producto.item.name,
+                cantidad: producto.cantidad
             })),
             total: carrito.reduce((total, producto)=> total + producto.item.precio * producto.stock, 0),
             nombre,
@@ -47,11 +47,12 @@ const Checkout = () => {
             telefono,
             email
         };
-
+         console.log("orden1 ",orden)
         //Paso 2: Guardamos la orden en la base de datos:
         
         addDoc(collection(db, "ordenes"), orden)
             .then(docRef => {
+                console.log("orden2 ",orden)
                 setOrdenId(docRef.id);
                 vaciar();
             })
@@ -59,8 +60,6 @@ const Checkout = () => {
                 console.error("Error al crear la orden.", error);
                 setError("Se produjo un error al crear la orden, vuelva prontus");
             })
-
-
     }
 
     return(
@@ -72,7 +71,7 @@ const Checkout = () => {
             {carrito.map(producto => (
                 <div key={producto.item.id}>
                     <p>
-                        {producto.item.nombre} x {producto.cantidad}
+                        {producto.item.name} x {producto.cantidad}
                     </p>
                     <p> Precio $: {producto.item.precio} </p>
                     <hr />
