@@ -10,13 +10,13 @@ import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ producto }) => {
   const { id, name, precio, photo, categoria, stock } = producto[0]
-
+   
   const { carrito,agregarProductos } = useContext(cartContext)
 
   const [cantidad, agregarCantidad] = useState(0)
 
   const add = (cantidad) => {
-    agregarCantidad(cantidad)
+    agregarCantidad(producto.length)
     const item = { id, name, precio }
     agregarProductos(item, cantidad)
   }
@@ -33,7 +33,7 @@ const ItemDetail = ({ producto }) => {
         <p>Precio: ${precio} </p>
         <p>Stock: {stock}</p>
         {
-          cantidad > 0 ? <Link to="/cart" > Terminar compra</Link> : <ItemCount inicial={1} stock={stock} funcionAgregar={add}></ItemCount>
+          cantidad > 0 ? <Link to="/cart" > Terminar compra</Link> : <ItemCount inicial={0} stock={stock} funcionAgregar={add}></ItemCount>
         }
 
       </Card.Body>
