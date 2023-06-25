@@ -6,7 +6,7 @@ import { cartContext } from "../../Context/cartContext";
 
 
 const Checkout = () => {
-    const { carrito, vaciar } = useContext(cartContext)
+    const { carrito, vaciar,total } = useContext(cartContext)
      console.log("OOO",carrito)
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
@@ -16,7 +16,6 @@ const Checkout = () => {
     const [error, setError] = useState("");
     const [ordenId, setOrdenId] = useState("");
     
-    //funciones y validaciones: 
 
     const manejadorFormulario = (event) => {
         event.preventDefault();
@@ -33,7 +32,7 @@ const Checkout = () => {
             return;
         }
 
-        //Paso 1: Creamos el objeto de la orden: 
+        // objeto de la orden: 
 
         const orden = {
             items: carrito.map(producto => ({
@@ -41,14 +40,15 @@ const Checkout = () => {
                 nombre: producto.item.name,
                 cantidad: producto.cantidad
             })),
-            total: carrito.reduce((total, producto)=> total + producto.item.precio * producto.stock, 0),
+            total: total,
             nombre,
             apellido, 
             telefono,
-            email
+            email,
+            fecha: new Date(),
         };
-         console.log("orden1 ",orden)
-        //Paso 2: Guardamos la orden en la base de datos:
+
+        //Guardamos la orden en la base de datos:
         
         addDoc(collection(db, "ordenes"), orden)
             .then(docRef => {
@@ -61,6 +61,7 @@ const Checkout = () => {
                 setError("Se produjo un error al crear la orden, vuelva prontus");
             })
     }
+    
 
     return(
 
@@ -78,7 +79,7 @@ const Checkout = () => {
                 </div>
             ))}
             <hr />
-
+                <h2>Total: {total}</h2>
                 <div className="form-group">
                     <label htmlFor=""> Nombre </label>
                     <input type="text" value={nombre} onChange={(e)=>setNombre(e.target.value)}/>
