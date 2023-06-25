@@ -1,13 +1,12 @@
 import { useState, useContext } from "react";
 import {db} from '../../service/config';
-import {collection, addDoc} from 'firebase/firestore';
+import {collection, addDoc, updateDoc, doc, getDoc} from 'firebase/firestore';
 import { cartContext } from "../../Context/cartContext";
 
 
 
 const Checkout = () => {
     const { carrito, vaciar,total } = useContext(cartContext)
-     console.log("OOO",carrito)
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -50,15 +49,31 @@ const Checkout = () => {
 
         //Guardamos la orden en la base de datos:
         
-        addDoc(collection(db, "ordenes"), orden)
-            .then(docRef => {
-                console.log("orden2 ",orden)
-                setOrdenId(docRef.id);
-                vaciar();
+        Promise.all(
+            
+            orden.items.map(async (item) => {
+                debugger
+                const id = (item.id).toString()
+                //Por cada producto en la colección inventario obtengo una referencia, y a partir de esa referencia obtengo el doc. 
+                const productoRef = doc(db, "productos", id);
+                console.log("llega")
+                const productoDoc = await getDoc(productoRef);
+                const stockActual = productoDoc.data().stock;
+                //Data es un método qu eme permite acceder a la información del Documento. 
+                debugger
+                await updateDoc(productoRef, {
+                    stock: stockActual - item.cantidad,
+                });
+                
             })
-            .catch(error => {
-                console.error("Error al crear la orden.", error);
-                setError("Se produjo un error al crear la orden, vuelva prontus");
+        )
+            .then(() => {
+              
+                addDoc(collection(db, "ordenes"), orden)
+                    .then((docRef) => {
+                        setOrdenId(docRef.id);
+                        vaciar();
+                    })
             })
     }
     

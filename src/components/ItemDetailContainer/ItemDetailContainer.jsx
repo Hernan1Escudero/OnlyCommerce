@@ -12,14 +12,11 @@ const ItemDetailContainer = () => {
 
      const {idProducto} = useParams()
 
- /*   useEffect( ()=>{
-       getProductos()
-       .then( productosFiltrar => setProducto(productosFiltrar.filter(producto => producto.id === parseInt(idProducto)))
-            )
-   },[idProducto]) */
+
   useEffect(()=>{
-   
+    debugger
     const producto= doc(db,"productos",idProducto)
+    debugger
     getDoc(producto)
     .then(res=>{
         const data =res.data()
@@ -28,7 +25,7 @@ const ItemDetailContainer = () => {
          
     })
     .catch(
-      error=> console.log("esu:",error)
+      error=> console.log(error)
     )
   },[idProducto]) 
 
