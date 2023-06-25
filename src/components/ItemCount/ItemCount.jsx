@@ -1,6 +1,5 @@
 import {  useState } from 'react'
-import { useContext } from 'react'
-import { cartContext } from '../../Context/cartContext'
+
 import Button from 'react-bootstrap/Button';
 
 const ItemCount = ({inicial,stock,funcionAgregar}) => {
@@ -25,7 +24,7 @@ const ItemCount = ({inicial,stock,funcionAgregar}) => {
     
       <div className="btn-group col-4   ">
         <button type="button" onClick={restar} className="col-sm btn btn-primary" id="subtract"> - </button>
-          <input type="text" className=" text-center col-4 "   value={num}  id="value" readOnly/>
+          <input type="text" className=" text-center col-4 "  value={num}  id="value" readOnly/>
         <button type="button" onClick={sumar} className="col-sm btn btn-primary" id="add"> + </button>
       </div>
       

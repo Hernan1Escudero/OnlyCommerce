@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-import { getProducto, getProductos } from '../../AsyncMock/products'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import Wait from "../Wait/Wait"
@@ -14,15 +13,12 @@ const ItemDetailContainer = () => {
 
 
   useEffect(()=>{
-    debugger
     const producto= doc(db,"productos",idProducto)
-    debugger
     getDoc(producto)
     .then(res=>{
         const data =res.data()
         const nuevoProducto =[{id: data.id ,...data}]
-         setProducto(nuevoProducto)
-         
+         setProducto(nuevoProducto)   
     })
     .catch(
       error=> console.log(error)
