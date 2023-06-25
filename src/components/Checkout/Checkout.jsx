@@ -4,6 +4,7 @@ import { collection, addDoc, updateDoc, doc, getDoc } from 'firebase/firestore';
 import { cartContext } from "../../Context/cartContext";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 
 const Checkout = () => {
@@ -80,20 +81,27 @@ const Checkout = () => {
     return (
 
 
-        <>
-            <h2>Checkout</h2>
-            <Form onSubmit={manejadorFormulario} className="formulario">
+        <div className="d-flex  ">
+            <div className="m-3 flex-column">
+                
+                {carrito.map(producto => (
+                    <Card className="flex-row">
+                        <Card.Body className="" >
+                            <Card.Title> {producto.item.name} x {producto.cantidad}</Card.Title>
+                            <div key={producto.item.id}>
+                                <p> Precio $: {producto.item.precio} </p>
+                               
+                            </div>
+                        </Card.Body>
+                        <Card.Img width={"100px"} height={"200px"} className="checkoutImg" src={producto.item.photo} alt="no se ve"></Card.Img>
+
+                    </Card>
+                ))}
+            </div>
+            <Form onSubmit={manejadorFormulario} className="p-4 formulario ">
+
                 <Form.Group>
-                    {carrito.map(producto => (
-                        <div key={producto.item.id}>
-                            <p>
-                                {producto.item.name} x {producto.cantidad}
-                            </p>
-                            <p> Precio $: {producto.item.precio} </p>
-                             <img src={producto.item.photo} alt="no se ve"/>
-                            <hr />
-                        </div>
-                    ))}
+
                     <Form.Text >
                         Total: {total}
                     </Form.Text>
@@ -141,7 +149,7 @@ const Checkout = () => {
                     <strong>¡Ya se acreditó la compra! Tu número de orden es:  {ordenId} </strong>
                 )
             }
-        </>
+        </div>
     )
 }
 

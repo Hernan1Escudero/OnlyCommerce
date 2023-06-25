@@ -9,7 +9,7 @@ const Item = ({id, name, precio,photo,categoria,stock}) => {
   return (
     <>
     
-    <Card className='cardBack p-0 m-4 text-center' style={{ width: '18rem' }}> 
+    <Card className='cardBack p-0 m-4 text-center ' style={{ width: '18rem' }}> 
     
         <Card.Body className='' >
         <div className='colow'></div>
