@@ -29,11 +29,6 @@ function BasicExample() {
             <Link className="distance mt-2" to={"/Categoria/Depilacion"}>Depilacion</Link>
             <Link className="distance mt-2" to={"/Categoria/Masajes"}>Masajes</Link>
             <Link className="distance mt-2" to={"/Categoria/Spa"}> Spa</Link>
-            <NavDropdown className="distance p-0 " title="Nosotros" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Tecnologias</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Nuestros Proveedores</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Productos</NavDropdown.Item>
-            </NavDropdown>
             
           </Nav>
         </Navbar.Collapse>
