@@ -12,21 +12,22 @@ const Cart = () => {
         return (
             <>
                 <h2> No hay productos en el carrito</h2>
-                <Link to='/'> Ver Productos </Link>
+                <Link to='/'><Button> Ver Productos</Button> </Link>
             </>
         )
     }
     return (
         <div>       
-            
+            <div className='d-flex m-3 justify-content-center' >
             {carrito.map(producto => <CartItem key={producto.id} {...producto} />)}
+            </div>
             <Card>
                 <Card.Body><h3>Total: ${total} </h3>
                 <h3>Cantidad total: {cantidadTotal} </h3>
                 </Card.Body>
                
                 <Button onClick={() => vaciar()}> Vaciar carrito </Button>
-                <Link to='/Checkout'> Finalizar Compra </Link>
+                <Link to='/Checkout'><Button> Finalizar Compra</Button> </Link>
             </Card>
             
            
