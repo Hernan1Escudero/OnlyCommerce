@@ -14,4 +14,4 @@ Este es un proyecto de ecommerce básico que se utiliza demostrar conocimiento e
 
 
 ## Licencia
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información
