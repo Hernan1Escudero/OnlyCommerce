@@ -14,11 +14,14 @@ export const CartProvider = ({children})=>{
      const [carrito,setCarrito] = useState([])
      const [total, setTotal] = useState(0);
      const [cantidadTotal, setCantidadTotal] = useState(0);
+     console.log("set carrito",carrito)
+        console.log("setcantidadtotal",total)
+        console.log("settotal",cantidadTotal)
        const agregarProductos =(item,cantidad)=>{
            const prodExist = carrito.find(prod => prod.item.id == item.id)
              if (!prodExist ){
                 setCarrito(prev => [...prev,{item,cantidad}])
-                console.log("despues del set",carrito)
+               
                 setCantidadTotal( prev => prev + cantidad);
                 setTotal(prev => prev + (item.precio * cantidad));
              }
@@ -34,7 +37,6 @@ export const CartProvider = ({children})=>{
                     }
                 );
                 setCarrito(update)
-                console.log("set, else", carrito)
                 setCantidadTotal( prev => prev + cantidad);
                 setTotal(prev => prev + (item.precio * cantidad));
              }
@@ -42,7 +44,9 @@ export const CartProvider = ({children})=>{
 
        const eliminarProductos =(id)=>{
         const productoEliminado = carrito.find(prod => prod.item.id === id);
-        const updatedCart = carrito.filter(prod => prod.id != id)
+        debugger;
+        const updatedCart = carrito.filter(prod=> prod.item.id != productoEliminado.item.id)
+        
          setCarrito(updatedCart)
          setCantidadTotal(prev => prev - productoEliminado.cantidad);
         setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));

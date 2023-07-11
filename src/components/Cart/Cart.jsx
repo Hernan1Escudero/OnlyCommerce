@@ -7,8 +7,9 @@ import { Button } from 'react-bootstrap';
 
 const Cart = () => {
     const {  carrito, vaciar, total, cantidadTotal } = useContext(cartContext);
+   
 
-    if (cantidadTotal === 0) {
+    if (cantidadTotal == 0) {
         return (
             <>
                 <h2> No hay productos en el carrito</h2>

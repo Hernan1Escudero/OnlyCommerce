@@ -24,7 +24,6 @@ function App() {
               <Route path="/cart" element={<Cart/>} />
               <Route path='/Checkout' element={ <Checkout/>} />
               <Route exact path="*" element={<ItemListContainer />} />
-              
             </Routes>
           </CartProvider>
         </BrowserRouter>

@@ -4,8 +4,13 @@ import { Card,Button } from "react-bootstrap";
 
 
 const CartItem = ({ item, cantidad }) => {
-  const { carrito, eliminarProductos } = useContext(cartContext);
-  console.log(item.photo)
+  const { carrito, eliminarProductos,cantidadTotal,vaciar } = useContext(cartContext);
+  
+  if (cantidadTotal == 0){
+    vaciar()
+
+  }
+
   return (
 
     <Card>

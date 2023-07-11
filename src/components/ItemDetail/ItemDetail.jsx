@@ -17,7 +17,6 @@ const ItemDetail = ({ producto }) => {
 
   const add = (cantidad) => {
     agregarCantidad(producto.length)
-    console.log("aca",photo)
     const item = { id, name, precio,photo }
     agregarProductos(item, cantidad)
   }
